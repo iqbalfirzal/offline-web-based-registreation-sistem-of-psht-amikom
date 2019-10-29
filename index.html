@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form Pendaftaran PSHT AMIKOM</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/nunito-font.css">
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="src/jquery.min.js"></script>
+    <script type="text/javascript" src="src/jspdf/dist/jspdf.min.js"></script>
+    <script type="text/javascript" src="src/exportexcel.js"></script>
+    <script type="text/javascript" src="src/script.js"></script>
+</head>
+<body class="form-v6" onkeydown="return (event.keyCode != 116)">
+	<video id="videobcg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+		<source src="src/videobg.mp4" type="video/mp4">
+	    Sorry, your browser does not support HTML5 video.
+	</video>
+	<div class="page-content">
+		<div id="overlaydiv" class="overlay">
+		  <button class="exportbtn" onclick="exportTableToCSV('pendaftar-psht-amikom.csv')">Ekspor ke Excel</button>
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeTabel()">&times;</a>
+		  <div class="overlay-content">
+		  	<div class="tabelhasilstylediv">
+		  		<table class="tabelhasilstyle" id="tabelHasil">
+	  				<th>NAMA</th><th>NIM</th><th>NOMOR HP</th><th>EMAIL</th>
+				</table>
+		  	</div>
+		  </div>
+		</div>
+		<div class="form-v6-content">
+			<div class="form-left">
+				<img draggable="false" ondragstart="return false;" src="src/banner.png" alt="form">
+			</div>
+			<form name="biodata" class="form-detail" method="post" action="javascript:void(0);">
+				<h2>Formulir Pendaftaran</h2>
+				<div class="form-row">
+					<input type="text" name="fname" id="fname" class="input-text" placeholder="Nama Lengkap" required>
+				</div>
+				<div class="form-row">
+					<input type="text" name="nim" id="nim" class="input-text" placeholder="NIM" required>
+				</div>
+				<div class="form-row">
+					<input type="tel" name="nohp" id="nohp" class="input-text" placeholder="Nomor HP (+62)" required>
+				</div>
+				<div class="form-row">
+					<input type="text" name="email" id="email" class="input-text" placeholder="Email Students Amikom" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+				</div>
+				<div class="form-row-last">
+					<input type="submit" onClick="terimaMasukan()" name="register" class="register" value="Daftar">
+					<input type="reset" name="reset" class="reset" value="Clear">
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="tabelbtdiv">
+		<button class="tabelbtcall" onclick="openTabel()">Data Pendaftar</button>
+	</div>
+</body><!-- made by iqbalfrzl -->
+</html>
